@@ -19,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|svg|jpg)$/,
+        test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader'],
       },
       {
@@ -37,7 +37,10 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/env', '@babel/preset-react'],
-            plugins: ['transform-class-properties'],
+            plugins: [
+              'transform-class-properties',
+              '@babel/plugin-transform-runtime',
+            ],
           },
         },
       },
